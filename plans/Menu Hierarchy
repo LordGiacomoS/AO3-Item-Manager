@@ -1,0 +1,145 @@
+Key:
+'-' means a seperate menu tab
+'~' means an action
+'=' means a description
+'>' means a variable
+'}' means category of actions
+
+
+
+-Main Menu
+  -Login Page
+    =Allows program to log a person in and start an AO3 session 
+    > username/email
+    > password
+
+    
+  -Collection Manage List stuff
+    > collection ID
+    > Collection item location (Num Id)
+    }Common:
+      ~Remove (removes item from collection entirely)
+      ~Unreview (sends the item to Unreviewed category of Manage Items and
+        removes the item from public view in collection if previously approved)
+      ~Reject (sends the item to Rejected category of Manage Items, and 
+        removes the item from public view in collection if previously approved)
+      ~Approve (sends the item to Approved category of Manage Items, and adds
+        the item to public view in the collection, if not already approved)
+    
+    }List Display & Navigation:
+      ~List (lists works in Manage Items category)
+        >Category (which Manage Items category to display, defaults to 
+          Unreviewed)
+        >start_num (work number. If none, defaults to 1.)
+        >Disp amt (how many works to display per page)[May remove this option           but leave background code in for future use]
+
+      ~Next Page (if applicable)
+      ~Prev Page (if applicable)
+      ~GoTo Page (goes to abs page number)
+        > page num
+
+    -Unreviewed
+      =use "List Display & Navigation" and "Common" without Unreview
+    -Invited
+      =use "List Display & Navigation" and "Common" 
+    -Rejected
+      =use "List Display & Navigation" and "Common" without Reject
+    -Approved
+      =use "List Display & Navigation" and "Common" without Approve
+
+
+
+  -Procedural Item Actor
+    =When given a list of urls/ids for series, works, and/or users, this
+      will allow a user to perform actions on the items, one by one.
+    =see Bulk Item Actor for actions & variables information
+  
+  -Bulk Item Actor
+    =When given a list of urls/ids for series, works, and/or users, this 
+      will perform an action on all of them.
+    }Common:
+      ~subscribing
+      > list of users/works/series to act on
+
+    }Works & Series:
+      ~bookmarking
+        > public/private bookmark
+        > rec?
+        > bookmark to collection(s)? if so which one(s)
+        > bookmark notes? (and contents)
+      ~Downloading
+        > file format
+        > Series saved in sub-folder?
+
+    }Works Specific:
+      =see Common and Works & Series
+      ~inviting them to collections
+      ~giving kudos
+      ~NOT commenting (as it would literally be basic ready-made spam bot; something I will not enable)
+
+    }Users:
+      =see Common
+
+    }Series:
+      =see Common and Works & Series
+
+
+
+
+  -List Exporter
+    =sorts through lists of series & works (i.e. Bookmarks, collections, work lists), and exports a list of urls
+        
+    }Common Filters:
+      ~filter by basic categories that AO3 natively supports
+      ~filter by other categories
+        ~complete or WIP
+        ~word count range
+          >minWordCount (if None, assume 0)
+          >maxWordCount (if None, assume infinite)
+
+        ~date updated range
+          >earliestUpdateDate (if None, assume Jan 1st, 1950; required due
+            to AO3's allowance for backdating works to accurately reflect
+            update date)
+          >latestUpdateDate (if None, assume tomorrow's date; required due
+            to time zones making some works can appear updated on the day
+            following one that user is actually in)
+
+        ~date posted range
+          >earliestPostDate (if None, assume Jan 1st, 1950; required due
+            to AO3's allowance for backdating works to accurately reflect
+            post date)
+          >latestPostDate (if None, assume tomorrow's date; required due
+            to time zones making some works can appear posted on the day
+            following one that user is actually in)
+
+    }Bookmark Category Filters:
+      =see "Common Filters"
+      ~filter by other categories
+        ~if series or work
+
+    }Works Category Filters:
+      =see "Common Filters"
+
+    }Series Category Filters:
+      =see "Common Filters"
+
+
+    -Collection
+      >Collection ID
+      -Collection Bookmarks
+        =use "Bookmark Category Filters"
+  
+      -Collection Works
+        =use "Works Category Filters"
+
+    -User
+      >Username (If none, defaults to self if logged in, otherwise error.)
+      -User Works
+        =use "Works Category Filters"
+
+      -User Series
+        =use "Series Category Filters"
+
+      -User Bookmarks
+        =use "Bookmarks Category Filters"

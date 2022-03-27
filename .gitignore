@@ -1,4 +1,8 @@
-Logins/**
-
+Logins/*
+!Logins/.keep
 
 __pycache__/*
+*.cpython-38.pyc
+scraps/*
+*.breakpoints
+commitNoticeDrafts/*

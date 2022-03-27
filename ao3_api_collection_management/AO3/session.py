@@ -71,6 +71,39 @@ class GuestSession:
         """
         
         return utils.kudos(work, self)
+
+    @threadable.threadable
+    def logout(self):
+        self.__del__()
+        
+        self.refresh_auth_token()
+        
+        if self.is_authed:
+            url = f"https://archiveofourown.org/users/{self.username}"
+            req = self.session.get(url)
+        else:
+            url = "https://archiveofourown.org"
+            req = self.session.get(url)
+        
+        soup = BeautifulSoup(req.content, "lxml")
+        lo_url = "https://archiveofourown.org/users/logout"
+        
+        at = self.authenticity_token
+        data = {
+            "commit": "Yes, Log Out",
+            "_method": "delete",
+            "authenticity_token": at,
+        }
+      
+        post = self.session.post(lo_url, data=data)
+        
+        self.refresh_auth_token()
+        self.session.close()
+      
+        if req.status_code == 429 or post.status_code == 429:
+            raise utils.HTTPError("We are being rate-limited. Try again in a while or reduce the number of requests")
+        
+
         
     @threadable.threadable
     def refresh_auth_token(self):

@@ -1,1 +1,0 @@
-- Add an encryption system for saved logins. While it won't do much against anyone who actually knows what they are doing, it will make it slightly more difficult to just accidentally leak logins if someone is browsing through files

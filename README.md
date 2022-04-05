@@ -315,7 +315,8 @@ The other invaluable resource to this project is the website this program intera
 
 ### Other Planned/Considered Additions
 #### General Changes
-- Upgrade from the console-based interface to a more user friendly GUI. 
+- Upgrade from the console-based interface to a more user friendly GUI.
+- Ability to use pseuds when logging in, and have them saved to your profile
 - Allow List Sorter/Exporter to work on AO3 searches (and lists of works containing a specific tag)
 
 <details><summary>Potential Filters for List Sorter & Exporter</summary>

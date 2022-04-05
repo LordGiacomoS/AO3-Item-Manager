@@ -96,7 +96,7 @@ Similarly to how you entered your username or email address, you should enter yo
 __Saving Login credentials for Future Use__ <br />
 After entering both your username/email address and password, you will be asked whether you want to save your login information for future sessions with the following prompt:
 ```
-Would you like to save this login for future sessions? (Warning, this feature is currently extremely insecure) Y/N: █
+Would you like to save this login for future sessions? Y/N: █
 ```
 If you do want to save the current login for future sessions, select yes, and if not select no. See the input type entry for Yes or No for more information on how to select each option.
 
@@ -146,7 +146,7 @@ This option returns the user to the main menu.
 
 # Credits:
 __Dependencies__ <br />
-The library used for hiding passwords as they are typed in is <a href="https://github.com/asweigart/pwinput"> pwinput </a>, by asweigart.
+The library used for hiding passwords as they are typed in is <a href="https://github.com/asweigart/pwinput">pwinput</a>, by asweigart.
 
 A large part of the code needed to interact with AO3 uses a modified version of ArmindoFlores's unofficial <a href="https://github.com/ArmindoFlores/ao3_api"> AO3 API </a>, and so a huge thanks to everyone who has contributed to that project is in order, as this project would not exist without the foundation and insight that this api provided.
 

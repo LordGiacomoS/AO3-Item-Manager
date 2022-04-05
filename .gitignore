@@ -3,8 +3,8 @@ logins.json
 __pycache__/*
 
 *.pyc
-!crypt.pyc
-crypt.py
+!obfuscate.pyc
+obfuscate.py
 
 scraps/*
 *.breakpoints

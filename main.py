@@ -1,14 +1,5 @@
-import ao3_api_collection_management.AO3 as AO3
-import json
-import os
-
-#import py_compile
-#py_compile.decompile("./im_menu/crypt.pyc")
-
-
-
-
-# /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+#import ao3_api_collection_management.AO3 as AO3
+#import os
 
 def load_settings():
     from im_menu import info
@@ -18,11 +9,6 @@ def load_settings():
         #defining actual settings:
         info.items_per_page = settings_dict["im_items_per_page"]
 
+load_settings()
 
-#load_settings()
-
-#from im_menu import home_nav
-
-from im_menu import obfuscate
-
-crypt = obfuscate.Obfuscate()
+from im_menu import home_nav

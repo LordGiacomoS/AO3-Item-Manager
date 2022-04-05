@@ -74,10 +74,7 @@ class GuestSession:
 
     @threadable.threadable
     def logout(self):
-        self.__del__()
-        
-        self.refresh_auth_token()
-        
+        self.__del__()        
         if self.is_authed:
             url = f"https://archiveofourown.org/users/{self.username}"
             req = self.session.get(url)
@@ -96,8 +93,6 @@ class GuestSession:
         }
       
         post = self.session.post(lo_url, data=data)
-        
-        self.refresh_auth_token()
         self.session.close()
       
         if req.status_code == 429 or post.status_code == 429:
@@ -170,7 +165,7 @@ class GuestSession:
         return req
     
     def __del__(self):
-        self.session.close()
+        self.session.close
 
 class Session(GuestSession):
     """

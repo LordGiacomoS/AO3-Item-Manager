@@ -1,5 +1,4 @@
-# Basic Usage
-### Types of Inputs
+## Types of Inputs
 __Yes or No__ <br />
 The first type of input the console may ask for is a yes or no answer, such as:
 ```
@@ -48,8 +47,10 @@ Enter your password: █
 ```
 
 
-## Specific Menus
-__Main Menu__ <br />
+# Currently Implemented Menus
+These menus are the ones that are currently implemented into the program.
+
+## Main Menu
 When starting the program for the first time, this is the first menu you will be presented with, and should look something like the following example.
 ```
 Welcome, Guest. Please log in using your AO3 credentials to increase your options.
@@ -62,10 +63,10 @@ Enter your choice: █
 ```
 This menu is an example of a list input, and the instructions for choosing from a list explain how to interact with it.
 
-__Login Menu__ <br />
+## Login Menu
 To utilize the majority of this program's features, you will need to provide it with the same login details you would use to access your archiveofourown.org account. These details will not be saved beyond your current session unless you specifically instruct the program to keep them on file.
 
-##### Username <br />
+__Username__ <br />
 When opening the login menu for the first time, you should see a message along the lines of:
 ```
 Enter your username or email address: █
@@ -73,15 +74,14 @@ Enter your username or email address: █
 This prompt requires you to put in the username or email address associated with your AO3 account. For more instructions, please see the entry on providing a string.
 
 
-##### Password <br />
+__Password__ <br />
 Once you give the program your username or email address, it will ask for the password associated with the same AO3 account.
 ```
 Enter your password: █
 ```
 Similarly to how you entered your username or email address, you should enter your password. For more instructions, please see the entry on providing a string.
 
-
-##### Saving Login credentials for Future Use <br />
+__Saving Login credentials for Future Use__ <br />
 After entering both your username/email address and password, you will be asked whether you want to save your login information for future sessions with the following prompt:
 ```
 Would you like to save this login for future sessions? (Warning, this feature is currently extremely insecure) Y/N: █
@@ -89,7 +89,7 @@ Would you like to save this login for future sessions? (Warning, this feature is
 If you do want to save the current login for future sessions, select yes, and if not select no. See the input type entry for Yes or No for more information on how to select each option.
 
 
-##### Using a Saved Login <br />
+__Using a Saved Login__ <br />
 If you have previously saved one or more logins to the system, you will be prompted with a message similar to the following when opening the login menu.
 
 ```
@@ -102,3 +102,31 @@ If you only have one saved login, selecting yes will automatically use it.
 If you have multiple saved logins, selecting yes will bring you to a selection list.
 
 For more information, see the input type entry for Yes or No.
+
+
+## Collection Items Manager:
+This menu exists to use the manage items tab for collections that the current user has the authority to manage. (Documentation to be improved.)
+
+__Set Collection ID__ <br />
+This option opens a prompt to provide a string, either the url or collection ID, to identify what collection to manage.
+
+__Set Collection Category__ <br />
+This option opens a List Menu for to choose which category in the Manage Items tab of AO3 to list the items for.
+
+__Collection Item List__ <br />
+This is the main part of this section of the program, and lists the items in the specified collection category in pages. By default there will be 20 items per page, but this can be changed in the settings menu. While the item list is displayed, you can act on a specific item and send it to another category of the collection or remove it entirely.
+
+__Return to Main Menu__ <br />
+This option returns the user to the main menu.
+
+## Settings
+This menu is for managing settings that are saved between sessions of the program.
+
+__Set Item Manager items per page__ <br />
+This option is used to set the number of items listed per page of the Collection Item Manager Item List.
+
+__Delete Saved Login Profile(s)__ <br />
+This option is used to delete login profiles that have been previously saved in the login menu.
+
+__Return to Main Menu__ <br />
+This option returns the user to the main menu.

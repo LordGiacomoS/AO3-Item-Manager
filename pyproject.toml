@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "AO3_Item_Manager"
-version = "0.0.1"
+version = "0.0.2"
 description = ""
 authors = ["LordGiacomoS"]
 
@@ -9,6 +9,8 @@ python = "^3.8"
 replit = "^3.2.4"
 bs4 = "^0.0.1"
 lxml = "^4.8.0"
+pwinput = "^1.0.2"
+
 
 [tool.poetry.dev-dependencies]
 

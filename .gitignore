@@ -1,8 +1,14 @@
 Logins/*
 !Logins/.keep
 
+logins.json
+logins (backup).json
+
 __pycache__/*
-*.cpython-38.pyc
+
+*.pyc
+!crypt.pyc
+
 scraps/*
 *.breakpoints
 commitNoticeDrafts/*

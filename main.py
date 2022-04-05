@@ -23,9 +23,6 @@ def load_settings():
 
 #from im_menu import home_nav
 
-from im_menu import crypt
+from im_menu import obfuscate
 
-crypt = crypt.Crypt()
-
-crypt.encrypt("9assw0rd")
-crypt.decrypt("ybLL~^;)")
+crypt = obfuscate.Obfuscate()

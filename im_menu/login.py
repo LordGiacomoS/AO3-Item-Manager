@@ -2,14 +2,14 @@ import re, json
 import ao3_api_collection_management.AO3 as AO3
 from pwinput import pwinput
 
-from im_menu import info, crypt
+from im_menu import info, obfuscate
 from im_menu.errors import OutOfRangeError, UnrecognizedResponseError
 
 
 callsign = ""
 passkey = ""
 
-crypt = crypt.Crypt()
+obf = obfuscate.Obfuscate()
 
 with open("logins.json") as f:
     logins_dict = json.load(f)
@@ -60,7 +60,7 @@ def manual_login():
             print("\n")
             print(f"Login successful. Welcome, {info.user}.")
             print("\n")
-            s_l_string = str(input("Would you like to save this profile for future sessions? (Warning, this feature is currently extremely insecure) Y/N: "))
+            s_l_string = str(input("Would you like to save this profile for future sessions? Y/N: "))
             if re.search(info.Yes, s_l_string) is not None:
                 save_login = True
             elif re.search(info.No, s_l_string) is not None:
@@ -80,8 +80,8 @@ def manual_login():
                 
     if passkey is not None and callsign is not None and save_login is not None:
         if save_login == True:
-            user = crypt.encrypt(callsign)
-            key = crypt.encrypt(passkey)
+            user = obf.obfuscate(callsign)
+            key = obf.obfuscate(passkey)
             logins_dict["logins"].append({"num": log_dict_len+1, "id": id, "user": user, "password": key})
             obj = json.dumps(logins_dict, indent=2)
             with open("logins.json", "w") as f:
@@ -127,8 +127,8 @@ def savedLoginsMenu():
         for login in logins_dict["logins"]:
             user = login["user"]
             key = login["password"]
-            callsign = crypt.decrypt(string=user)
-            passkey = crypt.decrypt(string=key)
+            callsign = obf.deobfuscate(string=user)
+            passkey = obf.deobfuscate(string=key)
             info.session = AO3.Session(callsign, passkey)
             info.logged_in = True
               
@@ -154,7 +154,7 @@ def savedLoginsMenu():
                 if login_num == login_count:
                     user = login["user"]
                     key = login["password"]
-                    callsign = crypt.decrypt(string=user)
-                    passkey = crypt.decrypt(string=key)
+                    callsign = obf.deobfuscate(string=user)
+                    passkey = obf.deobfuscate(string=key)
                     info.session = AO3.Session(callsign, passkey)
                     info.logged_in = True

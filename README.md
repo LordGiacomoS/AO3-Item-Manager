@@ -5,7 +5,7 @@ The current user interface is console based, but I do intend to create a more us
 # Please Note:
 - I am still very new to Python, and so this program likely has several bugs, flaws, inconsistencies, and room for improvement scattered throughout.
 - As of now, this program is UNFINISHED and is to be USED AT YOUR OWN RISK.
-- Saving logins currently poses a high security risk as they are not obfuscated or encrypted AT ALL.
+- Saving logins currently poses a slight security risk as they are only somewhat obfuscated.
 - Due to the unfinished nature of the program, any github branches with the "dev" prefix are very likely to be significantly changed between versions and when being moved to a release branch, which might cause problems with any code that depends on these dev branches. However, I will try to only perform necessary changes (for efficiency, organization, and improved functionality), and document them.
 
 # Basic Usage
@@ -315,21 +315,19 @@ The other invaluable resource to this project is the website this program intera
 
 ### Other Planned/Considered Additions
 #### General Changes
-- Add an encryption system for saved logins to make it at least slightly secure.
-- Upgrade from the console-based interface to a more user friendly GUI.
-- 
+- Upgrade from the console-based interface to a more user friendly GUI. 
 - Allow List Sorter/Exporter to work on AO3 searches (and lists of works containing a specific tag)
 
 <details><summary>Potential Filters for List Sorter & Exporter</summary>
-- author name (cannot believe AO3 doesn't allow bookmarks to be filtered by this already)
-- average number words per chapter (if fits within range)
-- Certain existing AO3 category average per year (and if it fits within a certain range):
-  - Average Comments per year
-  - Average Bookmarks per year
-  - Average number of words per year
-  - Average Kudos per year
-  - Average subscriptions per year
-  - Average number of new chapters per year
+- author name (cannot believe AO3 doesn't allow bookmarks to be filtered by this already)<br />
+- average number words per chapter (if fits within range)<br /><br />
+- Certain existing AO3 category average per year (and if it fits within a certain range):<br />
+  - Average Comments per year<br />
+  - Average Bookmarks per year<br />
+  - Average number of words per year<br />
+  - Average Kudos per year<br />
+  - Average subscriptions per year<br />
+  - Average number of new chapters per year<br />
 </details>
 
 # Copyright Stuff

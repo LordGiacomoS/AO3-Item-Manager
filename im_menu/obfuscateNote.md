@@ -1,0 +1,3 @@
+`obfuscate.pyc` is a compiled python file due to the fact that if it were publicly readable, the de-obfuscation of logins would be doable by hand without the use of frequency analysis. As such, I am keeping this file compiled to make anyone trying to break my specific obfuscation actually work for it.
+
+For anyone just trying to look at the code for educational purposes, an educational copy of the code used to generate the obfuscation key & encode and decode strings using said key is available under at <a href="https://github.com/LordGiacomoS/ASCII-Obfuscation-KeyValue-Generator">github.com/LordGiacomoS/ASCII-Obfuscation-KeyValue-Generator</a>, with a different set of values than the obfuscation key used here.

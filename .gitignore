@@ -1,13 +1,10 @@
-Logins/*
-!Logins/.keep
-
 logins.json
-logins (backup).json
 
 __pycache__/*
 
 *.pyc
 !crypt.pyc
+crypt.py
 
 scraps/*
 *.breakpoints

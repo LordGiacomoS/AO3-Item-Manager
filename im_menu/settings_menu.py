@@ -1,6 +1,7 @@
 from im_menu import info
 import json
 
+from im_menu.login import checkSavedLogins
 from im_menu.errors import OutOfRangeError
 
 def save_ipp(ipp):
@@ -56,6 +57,7 @@ def del_profile():
                     f.write(obj)
             #* Going back to last menu
                 info.current_menu = "settings"
+                checkSavedLogins()
                 return
             elif option > exit_num or option < 1:
                 raise OutOfRangeError("Number out of range")
@@ -66,7 +68,6 @@ def del_profile():
 def settings_menu():
     info.current_menu = "settings"
     action = ""
-    from im_menu.login import checkSavedLogins
     saved_logins = checkSavedLogins()
     if saved_logins <= 0:
         sl_msg = "Delete Saved Login Profile(s) [None to Delete]"
